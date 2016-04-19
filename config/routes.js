@@ -31,7 +31,11 @@ module.exports.routes = {
   * `assets` directory)                                                      *
   *                                                                          *
   ***************************************************************************/
-  'get /test': 'NeuralController.initial',
+  'get /separability-simple': 'NeuralController.initial',
+  'get /separability-double': 'NeuralController.double',
+  'get /train': 'NeuralController.train',
+  'post /trainer': 'NeuralController.neuralTrainer',
+
   '/': {
     view: 'homepage'
   },  

@@ -1,49 +1,8 @@
 
 <div class="col-md-6">
-	<p>0-2: <%= myNetwork["connections"]["0"]["weight"] %></p>
-  	<input id="w02" value="<%= myNetwork["connections"]["0"]["weight"] %>" hidden/>
-	
-	<p>0-3: <%= myNetwork["connections"]["1"]["weight"] %></p>
-	<input id="w03" value="<%= myNetwork["connections"]["1"]["weight"] %>" hidden/>
-	
-	<p>1-2: <%= myNetwork["connections"]["2"]["weight"] %></p>
-	<input id="w12" value="<%= myNetwork["connections"]["2"]["weight"] %>" hidden/>
-	
-	<p>1-3: <%= myNetwork["connections"]["3"]["weight"] %></p>
-	<input id="w13" value="<%= myNetwork["connections"]["3"]["weight"] %>" hidden/>		
-	
-	<p>bias1: <%= myNetwork["neurons"][myNetwork["neurons"].length - 3]["bias"] %></p>
-	<input id="wB1" value="<%= myNetwork["neurons"][myNetwork["neurons"].length - 3]["bias"] %>" hidden/>
 
-	<p>bias2: <%= myNetwork["neurons"][myNetwork["neurons"].length - 2]["bias"] %></p>
-	<input id="wB2" value="<%= myNetwork["neurons"][myNetwork["neurons"].length - 2]["bias"] %>" hidden/>
-	<br>	
-	<p>bias: <%= myNetwork["neurons"][myNetwork["neurons"].length - 1]["bias"] %></p>
-	<input id="wB" value="<%= myNetwork["neurons"][myNetwork["neurons"].length - 1]["bias"] %>" hidden/>
 </div>
 <div class="col-md-6">
 	<div id="box" class="jxgbox" style="width:500px; height:500px;"></div>
 </div>
-<script type="text/javascript">
-	var w02 = document.getElementById("w02").value;
-	var w03 = document.getElementById("w03").value;
-	var w12 = document.getElementById("w12").value;
-	var w13 = document.getElementById("w13").value;
-	var wB1 = document.getElementById("wB1").value;
-	var wB2 = document.getElementById("wB2").value;
-	var wB = document.getElementById("wB").value;
-	var pendiente1 = -(w02/w12);
-	var tIndependiente1 = (wB1/w12);
-
-	var pendiente2 = -(w03/w13);
-	var tIndependiente2 = (wB2/w13);
-	console.log(wB1);
-	console.log(wB2);
-	var board = JXG.JSXGraph.initBoard('box', {boundingbox: [-2, 2, 2, -2], axis:true});
-	var p1 = board.create('point',[0,0], {name:'A',size: 4, face: 'o' ,strokeColor: 'black' , fillColor:"black"});
-	var p2 = board.create('point',[1,0], {name:'B',size: 4, face: 'o' ,strokeColor: 'black' , fillColor:"white"});
-	var p3 = board.create('point',[1,1], {name:'C',size: 4, face: 'o' ,strokeColor: 'black' , fillColor:"black"});
-	var p4 = board.create('point',[0,1], {name:'D',size: 4, face: 'o' , strokeColor: 'black' , fillColor:"white"});	
-	board.create('functiongraph', [function(x){return pendiente1*x-tIndependiente1;}]);
-	board.create('functiongraph', [function(x){return pendiente2*x-tIndependiente2;}]);
-</script>
+<script type"text/javascript" src="/js/dependencies/sails.io.js"></script>
